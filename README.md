@@ -1,20 +1,6 @@
-# Faucet EVM Template
+# Lysa Faucet 
 
-<i> Testnet faucet template using Nextjs, Tailwind, hCaptcha and Redis </i>
-
-## One click deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0xDeploy%2Ffaucet-evm-template)
-
-## Demo
-
-https://0xdeploy-faucet-demo.vercel.app/
-
-## Video Tutorial
-
-[![](https://user-images.githubusercontent.com/19412160/212460373-16832943-6626-409c-aba9-15227937748d.png)](https://youtu.be/PcFfN_jrc_w)
-
-https://youtu.be/PcFfN_jrc_w
+<i> Lysa Testnet faucet template using Nextjs, Tailwind, hCaptcha and Redis </i>
 
 ## Environment Variables
 
