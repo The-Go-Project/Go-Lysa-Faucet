@@ -14,8 +14,6 @@ HCAPTCHA_SECRET=0x0000000000000000000000000000000000000000
 REDIS_URI=redis://default:key@url.com:6379
 ```
 
-![](https://user-images.githubusercontent.com/19412160/212416161-e334625f-1a9c-41e2-9c4b-4c878545f45d.png)
-
 ## Definitions
 
 PRIVATE_KEY: The private key of the wallet issuing funds. https://metamask.zendesk.com/hc/en-us/articles/360015289632
