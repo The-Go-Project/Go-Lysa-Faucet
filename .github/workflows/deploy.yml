@@ -1,0 +1,44 @@
+name: Deploy to GCP VM
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install SSH Key
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to GCP VM
+      run: |
+        ssh -o StrictHostKeyChecking=no root@34.41.61.187 << 'EOF'
+          # Stop any running instance of the application
+          pm2 stop all || true
+
+          # Navigate to the faucet application directory
+          cd /var/faucet-evm-template
+
+          # Pull the latest changes from the repository
+          git pull origin main
+
+          # Install dependencies
+          npm install
+
+          # Build the application
+          npm run build
+
+          # Restart the application using pm2
+          pm2 restart all || pm2 start npm --name "faucet" -- run start
+
+          # Ensure Nginx is running (if applicable)
+          sudo systemctl restart nginx
+        EOF
